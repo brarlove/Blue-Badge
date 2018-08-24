@@ -1,13 +1,12 @@
-﻿body {
+﻿/*
+    body {
     padding-top: 50px;
     padding-bottom: 20px;
 }
+*/
+
 
 /* Set padding to keep content from hitting the edges */
-.body-content {
-    padding-left: 15px;
-    padding-right: 15px;
-}
 
 /* Override the default bootstrap behavior where horizontal description lists 
    will truncate terms that are too long to fit in the left column 
@@ -21,4 +20,66 @@ input,
 select,
 textarea {
     max-width: 280px;
+}
+
+.container-fluid{
+    padding: 0;
+}
+.not-logged-in {
+    background-image: url(https://images.pexels.com/photos/5938/food-salad-healthy-lunch.jpg);
+    min-height: 100vh;
+    background-repeat: no-repeat;
+    background-position: center;
+    background-size: cover;
+    padding: 0px !important;
+    margin: 0 !important;
+}
+
+.appName {
+    font-size: 7em;
+    color: white;
+    font-family: 'Lobster', cursive;
+}
+.login-section {
+    background-color: mediumseagreen;
+    opacity: .95;
+    padding: 20px;
+    margin-top: 200px;
+    box-shadow: 0 19px 38px rgba(0, 0, 0, 0.3), 0 15px 12px rgba(0, 0, 0, 0.22);
+    border-radius: 20px;
+    padding: 40px;
+    padding-top: 0;
+}
+
+.register-link-section a{
+    color: white;
+    font-size: 20px;
+}
+
+#socialLoginForm a{
+    color: white;
+}
+
+.login-section img {
+    width: 225px;
+    height: 225px;
+    margin: auto;
+    display: block;
+    border-radius: 100%;
+    background-color: lightcyan;
+}
+.login-button{
+    margin: auto;
+    display: block;
+    margin-top:10px;
+    width: 200px;
+    font-size: 25px;
+    background-color: lightcyan;
+}
+.login-button a{
+    color: black;
+}
+
+.login-button:hover{
+    background-color: lightcyan;
 }
