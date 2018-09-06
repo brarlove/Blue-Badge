@@ -13,12 +13,17 @@ namespace RecipeApp.Data
         public int IngredientId { get; set; }
 
         [Required]
+        public int RecipeId { get; set; }
+
+        [Required]
         public Guid OwnerId { get; set; }
 
         [Required]
         public string IngredientName { get; set; }
 
-        [Required]
+        public string Directions { get; set; }
+
+        // [Required]
         public int Quantity { get; set; }
 
         [Required]

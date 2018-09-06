@@ -4,55 +4,70 @@
     ViewBag.Title = "Details";
 }
 
-<h2>Details</h2>
+<style>
+    .Ingredient-details {
+        background-color: lightcyan;
+        margin-top: 100px;
+        font-family: 'Franklin Gothic Medium', 'Arial Narrow', Arial, sans-serif;
+        border-radius: 10px;
+        padding-bottom: 10px;
+    }
+</style>
 
-<div>
-    <h4>IngredientDetail</h4>
-    <hr />
-    <dl class="dl-horizontal">
-        <dt>
-            @Html.DisplayNameFor(model => model.IngredientId)
-        </dt>
+<div class="col-md-offset-3 col-md-6 Ingredient-details">
+    <h2>Details</h2>
 
-        <dd>
-            @Html.DisplayFor(model => model.IngredientId)
-        </dd>
+    <div>
+        <h4>IngredientDetail</h4>
+        <hr />
+        <dl class="dl-horizontal">
+            <dt>
+                @Html.DisplayNameFor(model => model.IngredientId)
+            </dt>
 
-        <dt>
-            @Html.DisplayNameFor(model => model.IngredientName)
-        </dt>
+            <dd>
+                @Html.DisplayFor(model => model.IngredientId)
+            </dd>
 
-        <dd>
-            @Html.DisplayFor(model => model.IngredientName)
-        </dd>
+            <dt>
+                @Html.DisplayNameFor(model => model.IngredientName)
+            </dt>
 
-        <dt>
-            @Html.DisplayNameFor(model => model.Quantity)
-        </dt>
+            <dd>
+                @Html.DisplayFor(model => model.IngredientName)
+            </dd>
 
-        <dd>
-            @Html.DisplayFor(model => model.Quantity)
-        </dd>
+            @*<dt>
+                    @Html.DisplayNameFor(model => model.Quantity)
+                </dt>
 
-        <dt>
-            @Html.DisplayNameFor(model => model.CreatedUtc)
-        </dt>
+                <dd>
+                    @Html.DisplayFor(model => model.Quantity)
+                </dd>*@
 
-        <dd>
-            @Html.DisplayFor(model => model.CreatedUtc)
-        </dd>
+            <dt>
+                @Html.DisplayNameFor(model => model.CreatedUtc)
+            </dt>
 
-        <dt>
-            @Html.DisplayNameFor(model => model.ModifiedUtc)
-        </dt>
+            <dd>
+                @Html.DisplayFor(model => model.CreatedUtc)
+            </dd>
 
-        <dd>
-            @Html.DisplayFor(model => model.ModifiedUtc)
-        </dd>
+            <dt>
+                @Html.DisplayNameFor(model => model.ModifiedUtc)
+            </dt>
 
-    </dl>
+            <dd>
+                @Html.DisplayFor(model => model.ModifiedUtc)
+            </dd>
+
+        </dl>
+    </div>
+    <p>
+        @Html.ActionLink("Edit", "Edit", new { id = Model.IngredientId }) |
+        @Html.ActionLink("Back to List", "Index")
+    </p>
+
+
 </div>
-<p>
-    @Html.ActionLink("Edit", "Edit", new {  id = Model.IngredientId }) |
-    @Html.ActionLink("Back to List", "Index")
-</p>
+

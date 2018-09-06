@@ -10,7 +10,7 @@ namespace RecipeApp.Models
     {
         public int RecipeId { get; set; }
         public string RecipeName { get; set; }
-        public string Directions { get; set; }
-        public string Ingredients { get; set; }
+        //public string Directions { get; set; }
+        //public string Ingredients { get; set; }
     }
 }

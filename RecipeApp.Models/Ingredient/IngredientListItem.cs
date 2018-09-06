@@ -11,6 +11,7 @@ namespace RecipeApp.Models
     {
         public int IngredientId { get; set; }
         public string IngredientName { get; set; }
+        public string Directions { get; set; }
         public int Quantity { get; set; }
 
         [Display(Name="Created")]

@@ -6,53 +6,70 @@
                 ViewBag.Title = "Index";
 }
 
-<h2>Index</h2>
+<style>
+    .Recipe-index {
+        background-color: lightcyan;
+        margin-top: 100px;
+        font-family:'Franklin Gothic Medium', 'Arial Narrow', Arial, sans-serif;
+        border-radius: 10px;
+    }
+</style>
 
-<p>
-    @Html.ActionLink("Create New", "Create")
-</p>
-@if (TempData.ContainsKey("SaveResult"))
-{
-    <div class="alert alert-success fade in" role="alert">
-        @ViewBag.SaveResult
-        <button type="button" class="close" data-dismiss="alert">
-            <span>&times;</span>
-        </button>
-    </div>
-}
+<div class="col-md-offset-3 col-md-6 Recipe-index">
+    <h2>Recipes</h2>
 
-<table class="table">
-    <tr>
-        <th>
-            @Html.DisplayNameFor(model => model.RecipeId)
-        </th>
-        <th>
-            @Html.DisplayNameFor(model => model.RecipeName)
-        </th>
-        <th>
-            @Html.DisplayNameFor(model => model.CreatedUtc)
-        </th>
-        <th></th>
-    </tr>
-
-    @foreach (var item in Model)
+    @*<p>
+        @Html.ActionLink("Create New", "Create")
+    </p>*@
+    @if (TempData.ContainsKey("SaveResult"))
     {
-<tr>
-    <td>
-        @Html.DisplayFor(modelItem => item.RecipeId)
-    </td>
-    <td>
-        @Html.DisplayFor(modelItem => item.RecipeName)
-    </td>
-    <td>
-        @Html.DisplayFor(modelItem => item.CreatedUtc)
-    </td>
-    <td>
-        @Html.ActionLink("Edit", "Edit", new {  id=item.RecipeId  }) |
-        @Html.ActionLink("Details", "Details", new {  id=item.RecipeId }) |
-        @Html.ActionLink("Delete", "Delete", new {  id=item.RecipeId })
-    </td>
-</tr>
-}
+        <div class="alert alert-success fade in" role="alert">
+            @ViewBag.SaveResult
+            <button type="button" class="close" data-dismiss="alert">
+                <span>&times;</span>
+            </button>
+        </div>
+    }
 
-</table>
+        <table class="table">
+            <tr>
+                @*<th>
+                @Html.DisplayNameFor(model => model.RecipeId)
+            </th>*@
+                <th>
+                    @Html.DisplayNameFor(model => model.RecipeName)
+                </th>
+                <th>
+                    @Html.DisplayNameFor(model => model.CreatedUtc)
+                </th>
+                <th></th>
+            </tr>
+
+            @foreach (var item in Model)
+            {
+                <tr>
+                    @*<td>
+                    @Html.DisplayFor(modelItem => item.RecipeId)
+                </td>*@
+                    <td>
+                        @Html.DisplayFor(modelItem => item.RecipeName)
+                    </td>
+                    <td>
+                        @Html.DisplayFor(modelItem => item.CreatedUtc)
+                    </td>
+                    <td>
+                        <div>
+                            @Html.ActionLink("Add Ingredients", "Create", "Ingredient" ,new { id = item.RecipeId }, null)
+                        </div>
+                        @Html.ActionLink("Edit", "Edit", new { id = item.RecipeId }) |
+                        @*@Html.ActionLink("Details", "Details", new { id = item.RecipeId }) |*@
+                        @Html.ActionLink("Delete", "Delete", new { id = item.RecipeId })
+                    </td>
+                </tr>
+
+            }
+
+        </table>
+</div>
+
+

@@ -14,7 +14,11 @@ namespace RecipeApp.Models
         [MaxLength(100, ErrorMessage = "There are too many characters in this field.")]
         public string IngredientName { get; set; }
 
+        public int RecipeId { get; set; }
+
         public int Quantity { get; set; }
+
+        public string Directions { get; set; }
 
         public override string ToString() => IngredientName;
 

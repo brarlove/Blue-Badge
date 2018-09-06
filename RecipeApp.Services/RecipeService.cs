@@ -24,8 +24,8 @@ namespace RecipeApp.Services
                 {
                     OwnerId = _userId,
                     RecipeName = model.RecipeName,
-                    Ingredients = model.Ingredients, 
-                    Directions = model.Directions,
+                    //Ingredients = model.Ingredients,
+                    //Directions = model.Directions,
                     CreatedUtc = DateTimeOffset.Now
                 };
             
@@ -71,8 +71,8 @@ namespace RecipeApp.Services
                     {
                         RecipeId = entity.RecipeId,
                         RecipeName = entity.RecipeName,
-                        Directions = entity.Directions,
-                        Ingredients = entity.Ingredients,
+                        //Directions = entity.Directions,
+                        //Ingredients = entity.Ingredients,
                         CreatedUtc = entity.CreatedUtc,
                         ModifiedUtc = entity.ModifiedUtc
                     };
@@ -89,8 +89,8 @@ namespace RecipeApp.Services
                         .Single(e => e.RecipeId == model.RecipeId && e.OwnerId == _userId);
                 
          entity.RecipeName = model.RecipeName;
-                entity.Directions = model.Directions;
-                entity.Ingredients = model.Ingredients;
+                //entity.Directions = model.Directions;
+                //entity.Ingredients = model.Ingredients;
                 entity.ModifiedUtc = DateTimeOffset.UtcNow;
                 
          return ctx.SaveChanges() == 1;

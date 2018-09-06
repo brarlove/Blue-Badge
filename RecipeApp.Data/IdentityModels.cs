@@ -35,6 +35,7 @@ namespace RecipeApp.Data
         public DbSet<Recipe> Recipes { get; set; }
         public DbSet<Favorite> Favorites { get; set; }
         public DbSet<Ingredient> Ingredients { get; set; }
+        public DbSet<RecipeList> RecipeList { get; set; }
 
         protected override void OnModelCreating(DbModelBuilder modelBuilder)
         {

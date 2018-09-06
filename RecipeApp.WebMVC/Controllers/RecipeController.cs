@@ -48,8 +48,8 @@ namespace RecipeApp.WebMVC.Controllers
 
         public ActionResult Details(int id)
         {
-            var svc = CreateRecipeService();
-            var model = svc.GetRecipeById(id);
+            var svc = CreateRecipeListService();
+            var model = svc.GetIngredientsForRecipe(id);
 
             return View(model);
         }
@@ -63,8 +63,8 @@ namespace RecipeApp.WebMVC.Controllers
                 {
                     RecipeId = detail.RecipeId,
                     RecipeName = detail.RecipeName,
-                    Directions = detail.Directions,
-                    Ingredients = detail.Ingredients
+                    //Directions = detail.Directions,
+                    //Ingredients = detail.Ingredients
                 };
             return View(model);
         }
@@ -123,5 +123,13 @@ namespace RecipeApp.WebMVC.Controllers
             var service = new RecipeService(userId);
             return service;
         }
+
+        private RecipeListService CreateRecipeListService()
+        {
+            var userId = Guid.Parse(User.Identity.GetUserId());
+            var service = new RecipeListService(userId);
+            return service;
+        }
+
     }
 }

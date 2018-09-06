@@ -13,17 +13,22 @@ namespace RecipeApp.Models
         [Display(Name ="RecipeListId")]
         public int RecipeListId { get; set; }
 
-        public int RecipeId { get; set; }
+       
 
         [Display(Name = "Recipe")]
         public string Recipe { get; set; }
+        public int RecipeId { get; set; }
 
-
+        [Display(Name = "Ingredient")]
+        public string Ingredient { get; set; }
         public int IngredientId { get; set; }
-
 
         [Display(Name="Created")]
         public DateTimeOffset CreatedUtc { get; set; }
 
+        public override string ToString()
+        {
+            return base.ToString();
+        }
     }
 }

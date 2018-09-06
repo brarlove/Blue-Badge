@@ -15,10 +15,10 @@ namespace RecipeApp.Data
         public Guid OwnerId { get; set; }
         [Required]
         public string RecipeName { get; set; }
-        [Required]
-        public string Directions { get; set; }
-        [Required]
-        public string Ingredients { get; set; }
+        //[Required]
+        //public string Directions { get; set; }
+        //[Required]
+        //public string Ingredients { get; set; }
 
         [Required]
         public DateTimeOffset CreatedUtc { get; set; }

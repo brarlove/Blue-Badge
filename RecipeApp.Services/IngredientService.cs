@@ -19,20 +19,31 @@ namespace RecipeApp.Services
 
         public bool CreateIngredient(IngredientCreate model)
         {
-            var entity =
+            var ingredient =
                 new Ingredient()
                 {
                     OwnerId = _userId,
+                    RecipeId= model.RecipeId,
                     IngredientName = model.IngredientName,
+                    Directions = model.Directions,
                     Quantity = model.Quantity,
                     CreatedUtc = DateTimeOffset.Now
                 };
             
              using (var ctx = new ApplicationDbContext())
             {
-                ctx.Ingredients.Add(entity);
-                return ctx.SaveChanges() == 1;
+               var addedIngredient = ctx.Ingredients.Add(ingredient);
+                ctx.SaveChanges();
+                RecipeListService Rls = new RecipeListService(_userId);
+                RecipeListCreate Rlc = new RecipeListCreate
+                {
+                    RecipeID = model.RecipeId,
+                    IngredientID = addedIngredient.IngredientId                    
+                };
+                
+                return Rls.CreateRecipeList(Rlc);
             }
+
         }
 
         public IEnumerable<IngredientListItem> GetIngredients()
@@ -49,6 +60,7 @@ namespace RecipeApp.Services
                                 {
                                     IngredientId = e.IngredientId,
                                     IngredientName = e.IngredientName,
+                                    Directions = e.Directions,
                                     Quantity = e.Quantity,
                                     CreatedUtc = e.CreatedUtc
                                 }

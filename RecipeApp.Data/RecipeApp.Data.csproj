@@ -56,23 +56,6 @@
     <Compile Include="Favorite.cs" />
     <Compile Include="IdentityModels.cs" />
     <Compile Include="Ingredient.cs" />
-    <Compile Include="Migrations\201808211447540_InitialCreate.cs" />
-    <Compile Include="Migrations\201808211447540_InitialCreate.Designer.cs">
-      <DependentUpon>201808211447540_InitialCreate.cs</DependentUpon>
-    </Compile>
-    <Compile Include="Migrations\201808211759310_favorite.cs" />
-    <Compile Include="Migrations\201808211759310_favorite.Designer.cs">
-      <DependentUpon>201808211759310_favorite.cs</DependentUpon>
-    </Compile>
-    <Compile Include="Migrations\201808221435367_ingredient.cs" />
-    <Compile Include="Migrations\201808221435367_ingredient.Designer.cs">
-      <DependentUpon>201808221435367_ingredient.cs</DependentUpon>
-    </Compile>
-    <Compile Include="Migrations\201808221747478_ihavenoideawhy.cs" />
-    <Compile Include="Migrations\201808221747478_ihavenoideawhy.Designer.cs">
-      <DependentUpon>201808221747478_ihavenoideawhy.cs</DependentUpon>
-    </Compile>
-    <Compile Include="Migrations\Configuration.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
     <Compile Include="Recipe.cs" />
     <Compile Include="RecipeList.cs" />
@@ -80,20 +63,6 @@
   <ItemGroup>
     <None Include="App.config" />
     <None Include="packages.config" />
-  </ItemGroup>
-  <ItemGroup>
-    <EmbeddedResource Include="Migrations\201808211447540_InitialCreate.resx">
-      <DependentUpon>201808211447540_InitialCreate.cs</DependentUpon>
-    </EmbeddedResource>
-    <EmbeddedResource Include="Migrations\201808211759310_favorite.resx">
-      <DependentUpon>201808211759310_favorite.cs</DependentUpon>
-    </EmbeddedResource>
-    <EmbeddedResource Include="Migrations\201808221435367_ingredient.resx">
-      <DependentUpon>201808221435367_ingredient.cs</DependentUpon>
-    </EmbeddedResource>
-    <EmbeddedResource Include="Migrations\201808221747478_ihavenoideawhy.resx">
-      <DependentUpon>201808221747478_ihavenoideawhy.cs</DependentUpon>
-    </EmbeddedResource>
   </ItemGroup>
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
 </Project>

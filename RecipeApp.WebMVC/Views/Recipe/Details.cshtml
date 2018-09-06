@@ -1,66 +1,68 @@
-﻿@model RecipeApp.Models.RecipeDetail
+﻿@model IEnumerable<RecipeApp.Models.IngredientListItem>
 
 @{
     ViewBag.Title = "Details";
 }
 
-<h2>Details</h2>
+<style>
+    .Recipe-details {
+        background-color: lightcyan;
+        margin-top: 100px;
+        font-family: 'Franklin Gothic Medium', 'Arial Narrow', Arial, sans-serif;
+        border-radius: 10px;
+        padding-bottom: 10px;
+    }
+</style>
 
-<div>
-    <h4>RecipeDetail</h4>
-    <hr />
-    <dl class="dl-horizontal">
-        <dt>
-            @Html.DisplayNameFor(model => model.RecipeId)
-        </dt>
+<div class="col-md-offset-3 col-md-6 Recipe-details">
+    <h2>Details</h2>
 
-        <dd>
-            @Html.DisplayFor(model => model.RecipeId)
-        </dd>
+    <p>
+        @Html.ActionLink("Create New", "Create")
+    </p>
+    <table class="table">
+        <tr>
+            @*<th>
+                @Html.DisplayNameFor(model => model.IngredientId)
+            </th>*@
+            @*<th>
+                @Html.DisplayNameFor(model => model.IngredientName)
+            </th>*@
+            <th>
+                @Html.DisplayNameFor(model => model.Quantity)
+            </th>
+            <th>
+                @Html.DisplayNameFor(model => model.CreatedUtc)
+            </th>
+            <th></th>
+        </tr>
 
-        <dt>
-            @Html.DisplayNameFor(model => model.RecipeName)
-        </dt>
+        @foreach (var item in Model)
+        {
+            <tr>
+                @*@*<td>
+                    @Html.DisplayFor(modelItem => item.IngredientId)
+                </td>*@
+                @*<td>
+                    @Html.DisplayFor(modelItem => item.IngredientName)
+                </td>*@
+                <td>
+                    @Html.DisplayFor(modelItem => item.Quantity)
+                </td>
+                <td>
+                    @Html.DisplayFor(modelItem => item.CreatedUtc)
+                </td>
+                <td>
+                    @Html.ActionLink("Edit", "Edit", new { /* id=item.PrimaryKey */ }) |
+                    @Html.ActionLink("Details", "Details", new { /* id=item.PrimaryKey */ }) |
+                    @Html.ActionLink("Delete", "Delete", new { /* id=item.PrimaryKey */ })
+                </td>
+            </tr>
+        }
 
-        <dd>
-            @Html.DisplayFor(model => model.RecipeName)
-        </dd>
-
-        <dt>
-            @Html.DisplayNameFor(model => model.Directions)
-        </dt>
-
-        <dd>
-            @Html.DisplayFor(model => model.Directions)
-        </dd>
-
-        <dt>
-            @Html.DisplayNameFor(model => model.Ingredients)
-        </dt>
-
-        <dd>
-            @Html.DisplayFor(model => model.Ingredients)
-        </dd>
-
-        <dt>
-            @Html.DisplayNameFor(model => model.CreatedUtc)
-        </dt>
-
-        <dd>
-            @Html.DisplayFor(model => model.CreatedUtc)
-        </dd>
-
-        <dt>
-            @Html.DisplayNameFor(model => model.ModifiedUtc)
-        </dt>
-
-        <dd>
-            @Html.DisplayFor(model => model.ModifiedUtc)
-        </dd>
-
-    </dl>
+    </table>
+    <div>
+        @Html.ActionLink("Back to List", "Index")
+    </div>
 </div>
-<p>
-    @Html.ActionLink("Edit", "Edit", new {  id = Model.RecipeId  }) |
-    @Html.ActionLink("Back to List", "Index")
-</p>
+

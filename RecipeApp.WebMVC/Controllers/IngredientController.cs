@@ -24,9 +24,15 @@ namespace RecipeApp.WebMVC.Controllers
             return View(model);
         }
 
-        public ActionResult Create()
+        public ActionResult Create(int id)
         {
-            return View();
+            var model =
+               new IngredientCreate
+               {
+                   RecipeId = id,
+                   IngredientName = "",
+               };
+            return View(model);
         }
 
         [HttpPost]
@@ -41,7 +47,7 @@ namespace RecipeApp.WebMVC.Controllers
          if (service.CreateIngredient(model))
             {
                 TempData["SaveResult"] = "Your ingredient was created.";
-                return RedirectToAction("Index");
+                return RedirectToAction("Index","RecipeList",null);
             };
             
          ModelState.AddModelError("", "Ingredient could not be created.");
